@@ -11,7 +11,7 @@
 #import "ComparableColor.h"
 
 /**
- Обертка для упрощения взаимодействия с CVImageBufferRef
+ Wrapper of CVImageBufferRef.
  */
 @interface ImageBufferWrapper : NSObject
 {
@@ -19,7 +19,6 @@
   CVImageBufferRef imageBuffer;
 }
 
-/// Создать обертку буфер с блокировкой. По окончанию работы требуется вызвать unlock
 +(ImageBufferWrapper *) wrapperOfSampleBufferWithLocking:(CVImageBufferRef)buffer;
 
 /// Не используется

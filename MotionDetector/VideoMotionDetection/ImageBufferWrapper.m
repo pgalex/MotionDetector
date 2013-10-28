@@ -13,6 +13,10 @@ static const int SUPPORTING_PIXEL_FORMAT = 1111970369/*BGRA*/;
 
 @implementation ImageBufferWrapper
 
+
+/**
+ Create wrapper of buffer with buffer locking. Need to call unlock after end of working with wrapper
+ */
 +(ImageBufferWrapper *) wrapperOfSampleBufferWithLocking:(CVImageBufferRef)buffer
 {
   return [[ImageBufferWrapper alloc] initWithSampleBufferWithLocking:buffer];
