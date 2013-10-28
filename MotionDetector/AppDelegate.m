@@ -90,12 +90,17 @@
 
 -(void) videoMotionOccure
 {
-  [[self window] setTitle:@"Motion detected"];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [[self window] setTitle:@"Motion detected"];
+  });
 }
+
 
 -(void) videoMotionStopOccuring
 {
-  [[self window] setTitle:@"No motion detected"];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [[self window] setTitle:@"No motion detected"];
+  });
 }
 
 
