@@ -1,26 +1,24 @@
-//
-//  MotionDetectingVideoOutputDelegate.h
-//  CameraTest
-//
-//  Created by Александр Преображенцев on 05.10.13.
-//  Copyright (c) 2013 Александр Преображенцев. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import "VideoMotionDetector.h"
 #import "VideoMotionDetectorDelegate.h"
+
 /**
- Делегат обработки кадров видео с определением движения по кадрам видеоряда
+ Motion detecting video output delegate
  */
 @interface MotionDetectingVideoOutputAnalizer : NSObject <AVCaptureVideoDataOutputSampleBufferDelegate>
 {
   @private
+  /// frame of video output that are currently skiped. Using to detects motion not by every frame
   int skipedFramesCount;
+  
   VideoMotionDetector * motionDetector;
+  
+  /// Is there motion in last processed frames
   BOOL motionOccuring;
 }
 
+/// Delegate of motion detector
 @property (weak) id<VideoMotionDetectorDelegate> motionDetectingDelegate;
 
 -(id) init;

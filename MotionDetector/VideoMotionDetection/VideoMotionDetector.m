@@ -10,7 +10,7 @@
 #import "ComparableColor.h"
 
 static const int SECTOR_WIDTH = 16;
-static const int SECTOR_HEIGHT = 16;
+static const int  SECTOR_HEIGHT = 16;
 static const double DEFAULT_PRECISION = 0.4;
 
 /**

@@ -1,12 +1,6 @@
-//
-//  MotionDetectingVideoOutputDelegate.m
-//  CameraTest
-//
-//  Created by Александр Преображенцев on 05.10.13.
-//  Copyright (c) 2013 Александр Преображенцев. All rights reserved.
-//
-
 #import "MotionDetectingVideoOutputAnalizer.h"
+
+static const int SKIPED_FRAMES_COUNT = 15;
 
 @implementation MotionDetectingVideoOutputAnalizer
 
@@ -28,7 +22,7 @@
 
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
 {
-  if (skipedFramesCount < 15)
+  if (skipedFramesCount < SKIPED_FRAMES_COUNT)
   {
     skipedFramesCount++;
     return;
