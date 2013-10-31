@@ -1,11 +1,3 @@
-//
-//  VideoMotionDetector.m
-//  CameraTest
-//
-//  Created by Александр Преображенцев on 25.08.13.
-//  Copyright (c) 2013 Александр Преображенцев. All rights reserved.
-//
-
 #import "VideoMotionDetector.h"
 #import "ComparableColor.h"
 
@@ -13,9 +5,6 @@ static const int SECTOR_WIDTH = 16;
 static const int  SECTOR_HEIGHT = 16;
 static const double DEFAULT_PRECISION = 0.4;
 
-/**
- Изображение разбивается на сектора. Для каждого сектора определяется его усреденный цвет. Для определения движения сравниваются цвета в секторах, с чувствительностью
- */
 @implementation VideoMotionDetector
 
 -(id) init

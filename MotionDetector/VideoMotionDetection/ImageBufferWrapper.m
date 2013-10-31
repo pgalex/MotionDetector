@@ -4,18 +4,14 @@ static const int SUPPORTING_PIXEL_FORMAT = 1111970369/*BGRA*/;
 
 @implementation ImageBufferWrapper
 
-/**
- Create wrapper of buffer with its locking. Need to call unlock after end of working with wrapper
- */
+
 +(ImageBufferWrapper *) wrapperOfSampleBufferWithLocking:(CVImageBufferRef)buffer
 {
   return [[ImageBufferWrapper alloc] initWithSampleBufferWithLocking:buffer];
 }
 
 
-/**
- Init buffer with its locking. Need to call unlock after end of working with wrapper
- */
+
 -(id) initWithSampleBufferWithLocking:(CVImageBufferRef)buffer
 {
   if (self = [super init])
@@ -33,21 +29,13 @@ static const int SUPPORTING_PIXEL_FORMAT = 1111970369/*BGRA*/;
 }
 
 
-/**
- Not supported initializer
- */
+
 -(id) init
 {
   @throw([NSException exceptionWithName:@"Not suppurting initializer" reason:@"Use other initializers instead init:" userInfo:nil]);
 }
 
 
-/**
- Get color of pixel with coordinates
- \param x must be from 0 to image width
- \param y must be from 0 to image height
- \return color of pixel. Not nil
- */
 -(ComparableColor *) getColorOfPixelAtX:(int)pixelX y:(int)pixelY;
 {
   if (pixelX < 0 || pixelX > [self imageWidth])
@@ -63,7 +51,7 @@ static const int SUPPORTING_PIXEL_FORMAT = 1111970369/*BGRA*/;
   int bytesPerPixel = floor(CVPixelBufferGetBytesPerRow(imageBuffer) / imageWidth);
   unsigned char * pixelBuffer = (unsigned char *)CVPixelBufferGetBaseAddress(imageBuffer);
   
-  unsigned char blue = pixelBuffer[(pixelY * imageWidth + pixelX) * bytesPerPixel];
+  unsigned char blue = pixelBuffer[(pixelY * imageWidth + pixelX) * bytesPerPixel]; // BGRA coding
   unsigned char green = pixelBuffer[(pixelY * imageWidth + pixelX) * bytesPerPixel + 1];
   unsigned char red = pixelBuffer[(pixelY * imageWidth + pixelX) * bytesPerPixel + 2];
   

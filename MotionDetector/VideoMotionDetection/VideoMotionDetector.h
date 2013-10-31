@@ -1,17 +1,9 @@
-//
-//  VideoMotionDetector.h
-//  CameraTest
-//
-//  Created by Александр Преображенцев on 25.08.13.
-//  Copyright (c) 2013 Александр Преображенцев. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import "ImageBufferWrapper.h"
 
 /**
- Определитель движения по кадрам видоеряда
+ Detector of motion in frames of video
  */
 @interface VideoMotionDetector : NSObject
 {
@@ -21,19 +13,31 @@
   double motionDetectingPrecision;
 }
 
-/// изициализировать значениями по умолчанию
+/**
+ Init with default values
+ */
 -(id) init;
 
-/// обнаружено ли движение в по результатам обработки кадров видео
+/**
+ Is there any motion detected in last processed frame
+ */
 -(BOOL) motionDetected;
 
-/// обработать кадр видое для определения движения через CMSampleBufferRef. Размер изображения должен быть не меньше minimumImageWidth, minimumImageHeight
+/**
+ Process frame (with CMSampleBufferRef) of video for detecting motion. Frame size must be more that minimumImageWidth and minimumImageHeight
+ */
 -(void) processSampleBuffer:(CMSampleBufferRef)sampleBuffer;
 
-/// обработать кадр видое для определения движения через ImageBufferWrapper. imageWrapper должен быть не nil. Размер¬ не меньше minimumImageWidth, minimumImageHeight
+/**
+ Process frame (with ImageBufferWrapper) of video for detecting motion.
+ \param imageWrapper must be not nil. Image size must be more that minimumImageWidth and minimumImageHeight
+ */
 -(void) processImage:(ImageBufferWrapper *)imageWrapper;
 
-/// Установить точность обнаружения движения. Значение должно быть от 0.0 до 1.0
+/**
+ Set motion detecting precision. 
+ \param precision must be from 0.0(minimal changes in image will be detected) to 1.0(only big changes will be detected)
+ */
 -(void) setMotionDetectingPrecision:(double)precision;
 
 +(int) minimumImageWidth;

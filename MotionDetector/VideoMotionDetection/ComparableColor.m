@@ -11,9 +11,6 @@
 }
 
 
-/**
- Init with default values
- */
 -(id) init
 {
   return [self initWithRed:0 green:0 blue:0];
@@ -33,11 +30,6 @@
 }
 
 
-/**
- Compare with epsilon to other color
- \param otherColor must be not nil
- \param epsilon must be from 0.0 to 1.0
- */
 -(BOOL) equalsToColor:(ComparableColor *)otherColor withEpsilon:(double)epsilon
 {
   if (otherColor == nil)

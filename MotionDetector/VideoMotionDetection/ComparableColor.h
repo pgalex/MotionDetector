@@ -13,10 +13,19 @@
 
 +(ComparableColor *) colorWithRed:(unsigned char)r green:(unsigned char)g blue:(unsigned char)b;
 
+/**
+ Init with default values
+ */
 -(id) init;
+
 
 -(id) initWithRed:(unsigned char)r green:(unsigned char)g blue:(unsigned char)b;
 
+/**
+ Compare with epsilon to other color
+ \param otherColor must be not nil
+ \param epsilon must be from 0.0 to 1.0
+ */
 -(BOOL) equalsToColor:(ComparableColor *)otherColor withEpsilon:(double)epsilon;
 
 @property (assign) unsigned char red;
