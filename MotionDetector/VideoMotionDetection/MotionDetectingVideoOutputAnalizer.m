@@ -46,7 +46,7 @@ static const int SKIPED_FRAMES_COUNT = 15;
   {
     if (motionOccuring)
     {
-      [motionDetectingDelegate videoMotionOccure];
+      [motionDetectingDelegate videoMotionStartOccuring];
     }
     else
     {
