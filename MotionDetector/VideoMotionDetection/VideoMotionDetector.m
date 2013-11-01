@@ -3,7 +3,7 @@
 
 static const int SECTOR_WIDTH = 16;
 static const int  SECTOR_HEIGHT = 16;
-static const double DEFAULT_PRECISION = 0.4;
+static const double DEFAULT_PRECISION = 0.6;
 
 @implementation VideoMotionDetector
 
@@ -26,7 +26,7 @@ static const double DEFAULT_PRECISION = 0.4;
 }
 
 
--(void) setMotionDetectingPrecision:(double)precision
+-(void) setMotionDetectingPrecision:(double)precision // todo инвертировать значение 0.0 миним чувст. 1.0 макс
 {
   if (precision < 0.0 || precision > 1.0 )
   {
@@ -94,7 +94,7 @@ static const double DEFAULT_PRECISION = 0.4;
   {
     ComparableColor * firstColor = [sectorsData objectAtIndex:i];
     ComparableColor * secondColor = [otherSectorsData objectAtIndex:i];
-    if (![firstColor equalsToColor:secondColor withEpsilon:motionDetectingPrecision])
+    if (![firstColor equalsToColor:secondColor withEpsilon:(1.0 - motionDetectingPrecision)])
     {
       existsMotionInAnySector = YES;
       break;
