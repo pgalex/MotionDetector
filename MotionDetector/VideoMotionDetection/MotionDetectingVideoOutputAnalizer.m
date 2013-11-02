@@ -1,6 +1,6 @@
 #import "MotionDetectingVideoOutputAnalizer.h"
 
-static const int SKIPED_FRAMES_COUNT = 15;
+#define SKIPED_FRAMES_COUNT 15
 
 @implementation MotionDetectingVideoOutputAnalizer
 

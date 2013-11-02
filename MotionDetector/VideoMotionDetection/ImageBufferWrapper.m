@@ -1,6 +1,7 @@
 #import "ImageBufferWrapper.h"
 
-static const int SUPPORTING_PIXEL_FORMAT = 1111970369/*BGRA*/;
+/*BGRA*/
+#define SUPPORTING_PIXEL_FORMAT 1111970369
 
 @implementation ImageBufferWrapper
 

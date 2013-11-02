@@ -36,7 +36,7 @@
 
 /**
  Set motion detecting precision. 
- \param precision must be from 0.0(only big changes will be detected) to 1.0(minimal changes in image will be detected)
+ \param precision must be from 0.0(only big changes will be detected) to 1.0(minimal changes will be detected)
  */
 -(void) setMotionDetectingPrecision:(double)precision;
 

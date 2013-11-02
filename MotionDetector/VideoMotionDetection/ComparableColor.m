@@ -1,5 +1,8 @@
 #import "ComparableColor.h"
 
+#define MIN_EPSILON 0.0
+#define MAX_EPSILON 1.0
+
 @implementation ComparableColor
 
 @synthesize red, green, blue;
@@ -36,7 +39,7 @@
   {
     @throw([NSException exceptionWithName:@"Nil color" reason:@"otherColor must be not nil" userInfo:nil]);
   }
-  if (epsilon < 0.0 || epsilon > 1.0 )
+  if (epsilon < MIN_EPSILON || epsilon > MAX_EPSILON )
   {
     @throw([NSException exceptionWithName:@"Incorrect epsilon" reason:@"epsilon must be from 0 to 1" userInfo:nil]);
   }
@@ -44,16 +47,18 @@
   // 0.0 - минимальная погрешность - точное соотвествие значений
   // 1.0 - максимальная погрешность - разница 254 и меньше
   
+  double normalizedEpsilon = epsilon * 254.0;
+  
   int deltaRed = abs(red - [otherColor red]);
-  if (deltaRed > epsilon * 254.0)
+  if (deltaRed > normalizedEpsilon)
     return NO;
   
   int deltaGreed = abs(green - [otherColor green]);
-  if (deltaGreed > epsilon * 254.0)
+  if (deltaGreed > normalizedEpsilon)
     return NO;
   
   int deltaBlue = abs(blue - [otherColor blue]);
-  if (deltaBlue > epsilon * 254.0)
+  if (deltaBlue > normalizedEpsilon)
     return NO;
   
   return YES;

@@ -1,9 +1,11 @@
 #import "VideoMotionDetector.h"
 #import "ComparableColor.h"
 
-static const int SECTOR_WIDTH = 16;
-static const int  SECTOR_HEIGHT = 16;
-static const double DEFAULT_PRECISION = 0.6;
+#define SECTOR_WIDTH 16
+#define SECTOR_HEIGHT 16
+#define DEFAULT_PRECISION 0.6
+#define MIN_PRECISION 0.0
+#define MAX_PRECISION 1.0
 
 @implementation VideoMotionDetector
 
@@ -26,9 +28,9 @@ static const double DEFAULT_PRECISION = 0.6;
 }
 
 
--(void) setMotionDetectingPrecision:(double)precision // todo инвертировать значение 0.0 миним чувст. 1.0 макс
+-(void) setMotionDetectingPrecision:(double)precision
 {
-  if (precision < 0.0 || precision > 1.0 )
+  if (precision < MIN_PRECISION || precision > MAX_PRECISION)
   {
     @throw ([NSException exceptionWithName:@"Incorrect precision" reason:@"Value must be from 0.0 to 1.0" userInfo:nil]);
   }
