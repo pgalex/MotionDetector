@@ -17,13 +17,14 @@
 		2440E9D0180A85D100307DBA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2440E9B0180A85D000307DBA /* Cocoa.framework */; };
 		2440E9D8180A85D100307DBA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2440E9D6180A85D100307DBA /* InfoPlist.strings */; };
 		2440E9FB180A866200307DBA /* ComparableColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2440E9F3180A866200307DBA /* ComparableColor.m */; };
-		2440E9FC180A866200307DBA /* ImageBufferWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2440E9F5180A866200307DBA /* ImageBufferWrapper.m */; };
+		2440E9FC180A866200307DBA /* CVImageBufferWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2440E9F5180A866200307DBA /* CVImageBufferWrapper.m */; };
 		2440E9FD180A866200307DBA /* MotionDetectingVideoOutputAnalizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2440E9F7180A866200307DBA /* MotionDetectingVideoOutputAnalizer.m */; };
 		2440E9FE180A866200307DBA /* VideoMotionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2440E9F9180A866200307DBA /* VideoMotionDetector.m */; };
 		2440EA00180A86B700307DBA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2440E9FF180A86B700307DBA /* AVFoundation.framework */; };
 		2440EA02180A86BC00307DBA /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2440EA01180A86BC00307DBA /* CoreVideo.framework */; };
 		2440EA04180A86C300307DBA /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2440EA03180A86C300307DBA /* CoreMedia.framework */; };
 		2440EA08180ADC2D00307DBA /* ComparableColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2440EA07180ADC2D00307DBA /* ComparableColorTests.m */; };
+		24692B06182647F300DDE3E5 /* TestImageBufferWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 24692B05182647F300DDE3E5 /* TestImageBufferWrapper.m */; };
 		24F601B6181D187F000CD14A /* VideoMotionDetectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F601B5181D187F000CD14A /* VideoMotionDetectorTests.m */; };
 /* End PBXBuildFile section */
 
@@ -57,8 +58,8 @@
 		2440E9D7180A85D100307DBA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2440E9F2180A866200307DBA /* ComparableColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComparableColor.h; path = VideoMotionDetection/ComparableColor.h; sourceTree = "<group>"; };
 		2440E9F3180A866200307DBA /* ComparableColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComparableColor.m; path = VideoMotionDetection/ComparableColor.m; sourceTree = "<group>"; };
-		2440E9F4180A866200307DBA /* ImageBufferWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageBufferWrapper.h; path = VideoMotionDetection/ImageBufferWrapper.h; sourceTree = "<group>"; };
-		2440E9F5180A866200307DBA /* ImageBufferWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageBufferWrapper.m; path = VideoMotionDetection/ImageBufferWrapper.m; sourceTree = "<group>"; };
+		2440E9F4180A866200307DBA /* CVImageBufferWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVImageBufferWrapper.h; path = VideoMotionDetection/CVImageBufferWrapper.h; sourceTree = "<group>"; };
+		2440E9F5180A866200307DBA /* CVImageBufferWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVImageBufferWrapper.m; path = VideoMotionDetection/CVImageBufferWrapper.m; sourceTree = "<group>"; };
 		2440E9F6180A866200307DBA /* MotionDetectingVideoOutputAnalizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MotionDetectingVideoOutputAnalizer.h; path = VideoMotionDetection/MotionDetectingVideoOutputAnalizer.h; sourceTree = "<group>"; };
 		2440E9F7180A866200307DBA /* MotionDetectingVideoOutputAnalizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MotionDetectingVideoOutputAnalizer.m; path = VideoMotionDetection/MotionDetectingVideoOutputAnalizer.m; sourceTree = "<group>"; };
 		2440E9F8180A866200307DBA /* VideoMotionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoMotionDetector.h; path = VideoMotionDetection/VideoMotionDetector.h; sourceTree = "<group>"; };
@@ -69,6 +70,9 @@
 		2440EA03180A86C300307DBA /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		2440EA06180ADC2D00307DBA /* ComparableColorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComparableColorTests.h; path = VideoMotionDetectionTests/ComparableColorTests.h; sourceTree = "<group>"; };
 		2440EA07180ADC2D00307DBA /* ComparableColorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComparableColorTests.m; path = VideoMotionDetectionTests/ComparableColorTests.m; sourceTree = "<group>"; };
+		24692B04182647F300DDE3E5 /* TestImageBufferWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestImageBufferWrapper.h; path = VideoMotionDetectionTests/TestImageBufferWrapper.h; sourceTree = "<group>"; };
+		24692B05182647F300DDE3E5 /* TestImageBufferWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestImageBufferWrapper.m; path = VideoMotionDetectionTests/TestImageBufferWrapper.m; sourceTree = "<group>"; };
+		24692B081826499A00DDE3E5 /* ImageBufferWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageBufferWrapper.h; path = VideoMotionDetection/ImageBufferWrapper.h; sourceTree = "<group>"; };
 		24F601B4181D187F000CD14A /* VideoMotionDetectorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoMotionDetectorTests.h; path = VideoMotionDetectionTests/VideoMotionDetectorTests.h; sourceTree = "<group>"; };
 		24F601B5181D187F000CD14A /* VideoMotionDetectorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoMotionDetectorTests.m; path = VideoMotionDetectionTests/VideoMotionDetectorTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,10 +188,11 @@
 		2440E9E4180A85DE00307DBA /* VideoMotionDetection */ = {
 			isa = PBXGroup;
 			children = (
+				24692B081826499A00DDE3E5 /* ImageBufferWrapper.h */,
 				2440E9F2180A866200307DBA /* ComparableColor.h */,
 				2440E9F3180A866200307DBA /* ComparableColor.m */,
-				2440E9F4180A866200307DBA /* ImageBufferWrapper.h */,
-				2440E9F5180A866200307DBA /* ImageBufferWrapper.m */,
+				2440E9F4180A866200307DBA /* CVImageBufferWrapper.h */,
+				2440E9F5180A866200307DBA /* CVImageBufferWrapper.m */,
 				2440E9F6180A866200307DBA /* MotionDetectingVideoOutputAnalizer.h */,
 				2440E9F7180A866200307DBA /* MotionDetectingVideoOutputAnalizer.m */,
 				2440E9F8180A866200307DBA /* VideoMotionDetector.h */,
@@ -204,6 +209,8 @@
 				2440EA07180ADC2D00307DBA /* ComparableColorTests.m */,
 				24F601B4181D187F000CD14A /* VideoMotionDetectorTests.h */,
 				24F601B5181D187F000CD14A /* VideoMotionDetectorTests.m */,
+				24692B04182647F300DDE3E5 /* TestImageBufferWrapper.h */,
+				24692B05182647F300DDE3E5 /* TestImageBufferWrapper.m */,
 			);
 			name = VideoMotionDetectionTests;
 			sourceTree = "<group>";
@@ -319,7 +326,7 @@
 				2440E9BD180A85D000307DBA /* main.m in Sources */,
 				2440E9C4180A85D000307DBA /* AppDelegate.m in Sources */,
 				2440E9FB180A866200307DBA /* ComparableColor.m in Sources */,
-				2440E9FC180A866200307DBA /* ImageBufferWrapper.m in Sources */,
+				2440E9FC180A866200307DBA /* CVImageBufferWrapper.m in Sources */,
 				2440E9FD180A866200307DBA /* MotionDetectingVideoOutputAnalizer.m in Sources */,
 				2440E9FE180A866200307DBA /* VideoMotionDetector.m in Sources */,
 			);
@@ -330,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2440EA08180ADC2D00307DBA /* ComparableColorTests.m in Sources */,
+				24692B06182647F300DDE3E5 /* TestImageBufferWrapper.m in Sources */,
 				24F601B6181D187F000CD14A /* VideoMotionDetectorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

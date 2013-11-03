@@ -24,15 +24,10 @@
 -(BOOL) motionDetected;
 
 /**
- Process frame (with CMSampleBufferRef) of video for detecting motion. Frame size must be more that minimumImageWidth and minimumImageHeight
- */
--(void) processSampleBuffer:(CMSampleBufferRef)sampleBuffer;
-
-/**
  Process frame (with ImageBufferWrapper) of video for detecting motion.
  \param imageWrapper must be not nil. Image size must be more that minimumImageWidth and minimumImageHeight
  */
--(void) processImage:(ImageBufferWrapper *)imageWrapper;
+-(void) processImage:(id<ImageBufferWrapper>)imageWrapper;
 
 /**
  Set motion detecting precision. 

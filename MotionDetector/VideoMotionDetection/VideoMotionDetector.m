@@ -39,15 +39,7 @@
 }
 
 
--(void) processSampleBuffer:(CMSampleBufferRef)sampleBuffer
-{
-  ImageBufferWrapper * imageWrapper = [ImageBufferWrapper wrapperOfSampleBufferWithLocking:CMSampleBufferGetImageBuffer(sampleBuffer)];
-  [self processImage:imageWrapper];
-  [imageWrapper unlock];
-}
-
-
--(void) processImage:(ImageBufferWrapper *)imageWrapper
+-(void) processImage:(id<ImageBufferWrapper>)imageWrapper;
 {
   if (imageWrapper == nil)
   {
@@ -107,7 +99,7 @@
 }
 
 
--(ComparableColor *) computeAverageColorOfSectorWithWidthIndex:(int)sectorWidthIndex heightIndex:(int)sectorHeightIndex image:(ImageBufferWrapper *)imageWrapper
+-(ComparableColor *) computeAverageColorOfSectorWithWidthIndex:(int)sectorWidthIndex heightIndex:(int)sectorHeightIndex image:(id<ImageBufferWrapper>)imageWrapper
 {
   int startX = sectorWidthIndex * SECTOR_WIDTH;
   int endX = (sectorWidthIndex + 1) * SECTOR_WIDTH;

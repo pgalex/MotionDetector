@@ -1,19 +1,68 @@
-//
-//  VideoMotionDetectorTests.m
-//  MotionDetector
-//
-//  Created by Александр Преображенцев on 27.10.13.
-//  Copyright (c) 2013 Александр Преображенцев. All rights reserved.
-//
-
 #import "VideoMotionDetectorTests.h"
+#import "VideoMotionDetector.h"
+#import "TestImageBufferWrapper.h"
 
 @implementation VideoMotionDetectorTests
 
-// инициализация по умолчанию с правильными значениями
-// обработка nil imageWrapper
-// обработка изображения - ширина меньше нужного
-// обработка изображения - высота меньше нужного
+-(void) testInitWithCorrectValues
+{
+  VideoMotionDetector * motionDetector = [[VideoMotionDetector alloc] init];
+  STAssertFalse([motionDetector motionDetected], nil);
+}
+
+
+-(void) testExceptionWhenProcessedNilImage
+{
+  VideoMotionDetector * motionDetector = [[VideoMotionDetector alloc] init];
+  
+  @try
+  {
+    [motionDetector processImage:nil];
+    STFail(nil);
+  }
+  @catch (NSException *exception)
+  {
+    // ok
+  }
+}
+
+
+-(void) testExceptionWhenProcessingToSmallImageWidth
+{
+  VideoMotionDetector * motionDetector = [[VideoMotionDetector alloc] init];
+  TestImageBufferWrapper * testImage = [[TestImageBufferWrapper alloc] init];
+  [testImage setImageWidth:([VideoMotionDetector minimumImageWidth] - 1)];
+  [testImage setImageHeight:([VideoMotionDetector minimumImageHeight] + 1)];
+  @try
+  {
+    [motionDetector processImage:testImage];
+    STFail(nil);
+  }
+  @catch (NSException *exception)
+  {
+    // ok
+  }
+}
+
+
+-(void) testExceptionWhenProcessingToSmallImageHeight
+{
+  VideoMotionDetector * motionDetector = [[VideoMotionDetector alloc] init];
+  TestImageBufferWrapper * testImage = [[TestImageBufferWrapper alloc] init];
+  [testImage setImageWidth:([VideoMotionDetector minimumImageWidth] + 1)];
+  [testImage setImageHeight:([VideoMotionDetector minimumImageHeight] - 1)];
+  @try
+  {
+    [motionDetector processImage:testImage];
+    STFail(nil);
+  }
+  @catch (NSException *exception)
+  {
+    // ok
+  }
+}
+
+
 // установка точности обнаружени меньше нужно
 // установка точности обнаружени больше нужно
 

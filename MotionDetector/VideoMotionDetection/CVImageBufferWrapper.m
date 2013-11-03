@@ -1,14 +1,14 @@
-#import "ImageBufferWrapper.h"
+#import "CVImageBufferWrapper.h"
 
 /*BGRA*/
 #define SUPPORTING_PIXEL_FORMAT 1111970369
 
-@implementation ImageBufferWrapper
+@implementation CVImageBufferWrapper
 
 
-+(ImageBufferWrapper *) wrapperOfSampleBufferWithLocking:(CVImageBufferRef)buffer
++(CVImageBufferWrapper *) wrapperOfSampleBufferWithLocking:(CVImageBufferRef)buffer
 {
-  return [[ImageBufferWrapper alloc] initWithSampleBufferWithLocking:buffer];
+  return [[CVImageBufferWrapper alloc] initWithSampleBufferWithLocking:buffer];
 }
 
 

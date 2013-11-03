@@ -1,4 +1,5 @@
 #import "MotionDetectingVideoOutputAnalizer.h"
+#import "CVImageBufferWrapper.h"
 
 #define SKIPED_FRAMES_COUNT 15
 
@@ -28,8 +29,10 @@
     return;
   }
   skipedFramesCount = 0;
-  [motionDetector processSampleBuffer:sampleBuffer];
   
+  CVImageBufferWrapper * imageWrapper = [CVImageBufferWrapper wrapperOfSampleBufferWithLocking:CMSampleBufferGetImageBuffer(sampleBuffer)];
+  [motionDetector processImage:imageWrapper];
+  [imageWrapper unlock];
   
   BOOL existsChangesInMotionOccuring = [motionDetector motionDetected] != motionOccuring;
   if (existsChangesInMotionOccuring)
