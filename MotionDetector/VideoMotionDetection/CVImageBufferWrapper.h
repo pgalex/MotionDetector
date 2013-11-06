@@ -1,6 +1,5 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-#import "ComparableColor.h"
 #import "ImageBufferWrapper.h"
 
 /**

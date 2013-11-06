@@ -30,9 +30,7 @@
 -(void) testExceptionWhenProcessingToSmallImageWidth
 {
   VideoMotionDetector * motionDetector = [[VideoMotionDetector alloc] init];
-  TestImageBufferWrapper * testImage = [[TestImageBufferWrapper alloc] init];
-  [testImage setImageWidth:([VideoMotionDetector minimumImageWidth] - 1)];
-  [testImage setImageHeight:([VideoMotionDetector minimumImageHeight] + 1)];
+  TestImageBufferWrapper * testImage = [[TestImageBufferWrapper alloc] initWithImageWidth:([VideoMotionDetector minimumImageWidth] - 1) imageHeight:([VideoMotionDetector minimumImageHeight] + 1)];
   @try
   {
     [motionDetector processImage:testImage];
@@ -48,9 +46,7 @@
 -(void) testExceptionWhenProcessingToSmallImageHeight
 {
   VideoMotionDetector * motionDetector = [[VideoMotionDetector alloc] init];
-  TestImageBufferWrapper * testImage = [[TestImageBufferWrapper alloc] init];
-  [testImage setImageWidth:([VideoMotionDetector minimumImageWidth] + 1)];
-  [testImage setImageHeight:([VideoMotionDetector minimumImageHeight] - 1)];
+  TestImageBufferWrapper * testImage = [[TestImageBufferWrapper alloc] initWithImageWidth:([VideoMotionDetector minimumImageWidth] + 1) imageHeight:([VideoMotionDetector minimumImageHeight] - 1)];
   @try
   {
     [motionDetector processImage:testImage];

@@ -1,4 +1,5 @@
 #import "CVImageBufferWrapper.h"
+#import "ComparableColor.h"
 
 /*BGRA*/
 #define SUPPORTING_PIXEL_FORMAT 1111970369
@@ -10,7 +11,6 @@
 {
   return [[CVImageBufferWrapper alloc] initWithSampleBufferWithLocking:buffer];
 }
-
 
 
 -(id) initWithSampleBufferWithLocking:(CVImageBufferRef)buffer
@@ -28,7 +28,6 @@
   
   return self;
 }
-
 
 
 -(id) init

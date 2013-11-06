@@ -1,7 +1,8 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-#import "VideoMotionDetector.h"
 #import "VideoMotionDetectorDelegate.h"
+
+@class VideoMotionDetector;
 
 /**
  Motion detecting video output delegate

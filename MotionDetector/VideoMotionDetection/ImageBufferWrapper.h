@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
-#import "ComparableColor.h"
+
+@class ComparableColor;
 
 /**
  Wrapper of buffer that contains image

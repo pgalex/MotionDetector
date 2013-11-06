@@ -14,11 +14,10 @@
 
 -(id) init;
 
+-(id) initWithImageWidth:(size_t)width imageHeight:(size_t)height;
+
 -(ComparableColor *) getColorOfPixelAtX:(int)pixelX y:(int)pixelY;
 -(size_t) imageHeight;
 -(size_t) imageWidth;
-
--(void) setImageHeight:(size_t)height;
--(void) setImageWidth:(size_t)width;
 
 @end

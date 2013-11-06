@@ -1,13 +1,20 @@
 #import "TestImageBufferWrapper.h"
+#import "ComparableColor.h"
 
 @implementation TestImageBufferWrapper
 
 -(id) init
 {
+  @throw([NSException exceptionWithName:@"Not supporting initializer" reason:@"" userInfo:nil]);
+}
+
+
+-(id) initWithImageWidth:(size_t)width imageHeight:(size_t)height
+{
   if (self = [super init])
   {
-    imageWidth = 0;
-    imageHeight = 0;
+    imageWidth = width;
+    imageHeight = height;
   }
   
   return self;
@@ -29,17 +36,6 @@
 -(size_t) imageWidth
 {
   return imageWidth;
-}
-
--(void) setImageHeight:(size_t)height
-{
-  imageHeight = height;
-}
-
-
--(void) setImageWidth:(size_t)width
-{
-  imageWidth = width;
 }
 
 @end
