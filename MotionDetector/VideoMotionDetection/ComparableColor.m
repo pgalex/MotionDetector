@@ -44,24 +44,16 @@
     @throw([NSException exceptionWithName:@"Incorrect epsilon" reason:@"epsilon must be from 0 to 1" userInfo:nil]);
   }
   
-  // 0.0 - минимальная погрешность - точное соотвествие значений
-  // 1.0 - максимальная погрешность - разница 254 и меньше
-  
-  double normalizedEpsilon = epsilon * 254.0;
+  double normalizedEpsilon = epsilon * (255 * 3 - 1);
   
   int deltaRed = abs(red - [otherColor red]);
-  if (deltaRed > normalizedEpsilon)
-    return NO;
-  
   int deltaGreed = abs(green - [otherColor green]);
-  if (deltaGreed > normalizedEpsilon)
-    return NO;
-  
   int deltaBlue = abs(blue - [otherColor blue]);
-  if (deltaBlue > normalizedEpsilon)
-    return NO;
   
-  return YES;
+  if ((deltaRed + deltaGreed + deltaBlue) > normalizedEpsilon)
+    return NO;
+  else
+    return YES;
 }
 
 @end
