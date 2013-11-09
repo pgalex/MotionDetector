@@ -41,6 +41,7 @@
 
 -(void) processImage:(id<ImageBufferWrapper>)imageWrapper;
 {
+  // todo правильная обработка изображений любого масштаба
   if (imageWrapper == nil)
   {
     @throw ([NSException exceptionWithName:@"Incorrect image" reason:@"Image wrapper must be not nil" userInfo:nil]);

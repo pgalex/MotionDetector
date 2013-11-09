@@ -59,7 +59,33 @@
 }
 
 
-// установка точности обнаружени меньше нужно
-// установка точности обнаружени больше нужно
+-(void) testExceptionSettingTooSmallPrecision
+{
+  VideoMotionDetector * motionDetector = [[VideoMotionDetector alloc] init];
+   @try
+  {
+    [motionDetector setMotionDetectingPrecision:-0.1];
+    STFail(nil);
+  }
+  @catch (NSException *exception)
+  {
+    // ok
+  }
+}
+
+
+-(void) testExceptionSettingTooBigPrecision
+{
+  VideoMotionDetector * motionDetector = [[VideoMotionDetector alloc] init];
+  @try
+  {
+    [motionDetector setMotionDetectingPrecision:1.1];
+    STFail(nil);
+  }
+  @catch (NSException *exception)
+  {
+    // ok
+  }
+}
 
 @end
