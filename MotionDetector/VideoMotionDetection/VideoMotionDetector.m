@@ -1,11 +1,11 @@
 #import "VideoMotionDetector.h"
 #import "ComparableColor.h"
 
-#define SECTOR_WIDTH 16
-#define SECTOR_HEIGHT 16
-#define DEFAULT_PRECISION 0.6
-#define MIN_PRECISION 0.0
-#define MAX_PRECISION 1.0
+static const int SECTOR_WIDTH = 16;
+static const int SECTOR_HEIGHT = 16;
+static const double DEFAULT_PRECISION = 0.6;
+static const double MIN_PRECISION = 0.0;
+static const double MAX_PRECISION = 1.0;
 
 @implementation VideoMotionDetector
 

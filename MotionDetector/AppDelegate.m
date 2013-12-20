@@ -38,8 +38,6 @@
     return NO;
   }
   
-  [captureSession setSessionPreset:AVCaptureSessionPreset640x480];
-  
   NSArray * videoDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
   if ([videoDevices count] <= 0)
   {

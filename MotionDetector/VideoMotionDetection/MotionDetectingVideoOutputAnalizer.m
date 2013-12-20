@@ -2,7 +2,7 @@
 #import "CVImageBufferWrapper.h"
 #import "VideoMotionDetector.h"
 
-#define SKIPED_FRAMES_COUNT 15
+static const int SKIPED_FRAMES_COUNT = 15;
 
 @implementation MotionDetectingVideoOutputAnalizer
 

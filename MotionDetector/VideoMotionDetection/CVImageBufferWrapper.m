@@ -2,7 +2,7 @@
 #import "ComparableColor.h"
 
 /*BGRA*/
-#define SUPPORTING_PIXEL_FORMAT 1111970369
+static const OSType SUPPORTING_PIXEL_FORMAT = 1111970369;
 
 @implementation CVImageBufferWrapper
 

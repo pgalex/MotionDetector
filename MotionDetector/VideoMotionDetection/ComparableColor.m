@@ -1,7 +1,7 @@
 #import "ComparableColor.h"
 
-#define MIN_EPSILON 0.0
-#define MAX_EPSILON 1.0
+static const double MIN_EPSILON = 0.0;
+static const double MAX_EPSILON = 1.0;
 
 @implementation ComparableColor
 
